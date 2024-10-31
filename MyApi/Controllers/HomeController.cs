@@ -1,12 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace MyApi.Controllers
+[Route("api/[controller]")]
+[ApiController]
+public class NameController : ControllerBase
 {
-    public class HomeController : Controller
+    [HttpGet]
+    public IActionResult GetName()
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
+        return Ok(new { Name = "Dharmin Patel", Age = 21 });
     }
 }
